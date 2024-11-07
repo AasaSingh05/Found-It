@@ -7,7 +7,7 @@ import AddItemButton from './Addbutton';
 import AddItemForm from './AddItemForm'; 
 
 const Found: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // Initialize the modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Scroll handler function to scroll horizontally with mouse wheel
   const handleScroll = (event: React.WheelEvent<HTMLDivElement>) => {
@@ -46,16 +46,32 @@ const Found: React.FC = () => {
 
         <section className="mb-10">
           <h2 className="text-3xl text-cyan-900 font-bold mb-4">Items</h2>
-          <div className="grid grid-cols-5 gap-7">
-            {[...Array(10)].map((_, index) => (
-              <div key={index} className="flex-shrink-0">
-                <Card
-                  title="Product name"
-                  location="Location"
-                  time="Time"
-                />
-              </div>
-            ))}
+          <div className="grid grid-cols-3 gap-7">
+            <Card
+              title="Lost Wallet"
+              location="Library"
+              time="14:40"
+            />
+            <Card
+              title="Umbrella"
+              location="Cafeteria"
+              time="18:30"
+            />
+            <Card
+              title="Water Bottle"
+              location="Gym"
+              time="6:30"
+            />
+            <Card
+              title="Purse"
+              location="Park"
+              time="17:30"
+            />
+            <Card
+              title="Sunglasses"
+              location="Cafe"
+              time="16:30"
+            />
           </div>
         </section>
 
