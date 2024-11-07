@@ -125,7 +125,7 @@ const LandingPage: React.FC = () => {
               className="w-full flex items-center justify-center px-4 py-2 bg-white text-[#19647E] rounded-md font-semibold shadow-lg hover:bg-gray-100 transition duration-300"
             >
               <img
-                src="/assets/google-icon.png" 
+                src="/assets/googoo.jpg" 
                 alt="Google Icon"
                 className="w-6 h-6 mr-2"
               />
