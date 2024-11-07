@@ -3,6 +3,9 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import Card from './Card';
+import { useState } from 'react';
+import { CurrEmail } from '@/lib/auth';
+import { SessionUsername } from '@/lib/username';
 
 const Profile: React.FC = () => {
   const handleScroll = (event: React.WheelEvent<HTMLDivElement>) => {
@@ -14,6 +17,9 @@ const Profile: React.FC = () => {
       behavior: 'smooth'
     });
   };
+
+  const [name, setname] = useState<string>(SessionUsername);
+  const [email, setemail] = useState<string>(CurrEmail);
 
   return (
     <div className="min-h-screen flex">
@@ -41,8 +47,8 @@ const Profile: React.FC = () => {
           <div className="flex-grow text-white pl-8">
             <h2 className="text-4xl font-bold mb-6">User Information</h2>
             <div className="space-y-3">
-              <p className="text-lg">Name: John Doe</p>
-              <p className="text-lg">Email ID: john.doe@example.com</p>
+              <p className="text-lg">Name: aasasingh2005 </p>
+              <p className="text-lg">Email ID: aasasingh2005@gmail.com </p>
               <p className="text-lg">Address: 1234 Elm St, Springfield</p>
               <p className="text-lg">Contact No: +1234567890</p>
             </div>
@@ -59,6 +65,7 @@ const Profile: React.FC = () => {
             {[...Array(5)].map((_, index) => (
               <div key={index} className="w-72 flex-shrink-0">
                 <Card
+                  image = 'public\assets\sample.png'
                   title="Product name"
                   location="Location"
                   time="Time"
@@ -78,6 +85,7 @@ const Profile: React.FC = () => {
             {[...Array(5)].map((_, index) => (
               <div key={index} className="w-72 flex-shrink-0">
                 <Card
+                    image = 'public\assets\sample.png'
                   title="Product name"
                   location="Lost by: Person"
                   time="Time"

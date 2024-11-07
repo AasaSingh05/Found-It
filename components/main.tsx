@@ -3,8 +3,13 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import Card from './Card';
+import { useState } from "react";
+import { SessionUsername } from '@/lib/username';
 
 const Main: React.FC = () => {
+
+  const [message, setMessage] = useState<string>(SessionUsername);
+
   // Scroll handler function to scroll horizontally with mouse wheel
   const handleScroll = (event: React.WheelEvent<HTMLDivElement>) => {
     const container = event.currentTarget;
@@ -25,7 +30,7 @@ const Main: React.FC = () => {
         <header className="flex justify-between items-start mb-6">
           <h1 className="text-5xl p-8 font-bold text-cyan-900">
             Welcome <br />
-            <span className="text-[#19647E]">User_name</span>
+            <span className="text-[#19647E]">{message}</span>
           </h1>
 
           <img src="/assets/paperplane.png" className="w-150 h-40" />

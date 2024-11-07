@@ -2,10 +2,14 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import IsValidUser from '@/lib/auth';
+import getUsername from '@/lib/username';
 
 const LandingPage: React.FC = () => {
   const router = useRouter();
   const [isLoginModalOpen, setLoginModalOpen] = useState(false);
+  const [email, setemail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleLoginClick = () => {
     setLoginModalOpen(true);
@@ -16,7 +20,10 @@ const LandingPage: React.FC = () => {
   };
 
   const handleLoginSubmit = () => {
-    router.push('/home'); 
+    if ( IsValidUser(email,password) ){
+      getUsername(email);
+      router.push('/home'); 
+    }
   };
 
   const handleGoogleLogin = () => {
@@ -88,19 +95,21 @@ const LandingPage: React.FC = () => {
               <input
                 type="email"
                 id="email"
-                className="p-2 mb-4 w-full border border-gray-400 rounded-md text-lg focus:outline-none"
+                className="p-2 mb-4 w-full border border-gray-400 text-black rounded-md text-lg focus:outline-none"
                 placeholder="Enter your email"
+                onChange={(e) => setemail(e.target.value)}
                 required
               />
 
-              <label htmlFor="password" className="block text-gray-200 text-lg font-semibold mb-2">
+              <label htmlFor="password" className="block text-gray-200  text-lg font-semibold mb-2">
                 Password:
               </label>
               <input
                 type="password"
                 id="password"
-                className="p-2 mb-4 w-full border border-gray-400 rounded-md text-lg focus:outline-none"
+                className="p-2 mb-4 w-full border border-gray-400 text-black rounded-md text-lg focus:outline-none"
                 placeholder="Enter your password"
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
 
