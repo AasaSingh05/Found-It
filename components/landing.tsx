@@ -1,19 +1,31 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 const LandingPage: React.FC = () => {
   const router = useRouter();
+  const [isLoginModalOpen, setLoginModalOpen] = useState(false);
 
   const handleLoginClick = () => {
-    router.push('/home');
+    setLoginModalOpen(true);
+  };
+
+  const closeLoginModal = () => {
+    setLoginModalOpen(false);
+  };
+
+  const handleLoginSubmit = () => {
+    router.push('/home'); 
+  };
+
+  const handleGoogleLogin = () => {
+    window.location.href = '/api/auth/google'; 
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#19647E] to-[#4ABDAC] flex flex-col items-center justify-center text-white">
       
-      {/* Top Image */}
       <div className="mt-8 mb-4">
         <img 
           src="assets/foundit.png"
@@ -22,7 +34,6 @@ const LandingPage: React.FC = () => {
         />
       </div>
 
-      {/* Hero Section */}
       <div className="flex flex-col items-center mb-12 text-center px-4">
         <h1 className="text-5xl font-bold mb-4 animate-fadeIn">Welcome to FoundIt</h1>
         <p className="text-lg mb-8 max-w-lg animate-fadeIn">
@@ -35,18 +46,94 @@ const LandingPage: React.FC = () => {
           Login
         </button>
 
-          <img 
-            src="/assets/plane.png"
-            alt="Plane Image"
-            className="w-[800px] h-[800px] object-contain"
-          />
-        </div>
-     
+        <img 
+          src="/assets/plane.png"
+          alt="Plane Image"
+          className="w-[800px] h-[800px] object-contain"
+        />
+      </div>
 
-      {/* Footer */}
       <footer className="mt-auto p-4 w-full text-center text-sm text-gray-300">
         <p>&copy; {new Date().getFullYear()} FoundIt. All rights reserved.</p>
       </footer>
+
+      {isLoginModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div
+            className="absolute inset-0 bg-black bg-opacity-50"
+            onClick={closeLoginModal}
+          />
+
+          {/* Modal container */}
+          <div className="w-full max-w-md rounded-lg bg-cyan-700 p-8 shadow-lg relative z-10">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-gray-100 text-3xl font-bold">Login</h2>
+              <button
+                className="text-white text-xl hover:text-gray-300"
+                onClick={closeLoginModal}
+              >
+                ✕
+              </button>
+            </div>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleLoginSubmit();
+              }}
+            >
+              <label htmlFor="email" className="block text-gray-200 text-lg font-semibold mb-2">
+                Email:
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="p-2 mb-4 w-full border border-gray-400 rounded-md text-lg focus:outline-none"
+                placeholder="Enter your email"
+                required
+              />
+
+              <label htmlFor="password" className="block text-gray-200 text-lg font-semibold mb-2">
+                Password:
+              </label>
+              <input
+                type="password"
+                id="password"
+                className="p-2 mb-4 w-full border border-gray-400 rounded-md text-lg focus:outline-none"
+                placeholder="Enter your password"
+                required
+              />
+
+              <button
+                type="submit"
+                className="w-full bg-cyan-800 text-white px-4 py-2 rounded-md hover:bg-cyan-900 mt-4"
+              >
+                Login
+              </button>
+            </form>
+
+            
+            <div className="flex items-center justify-center my-6">
+              <div className="w-1/4 h-px bg-gray-300"></div>
+              <p className="px-2 text-sm text-gray-200">OR</p>
+              <div className="w-1/4 h-px bg-gray-300"></div>
+            </div>
+
+            {/* Google Login */}
+            <button
+              onClick={handleGoogleLogin}
+              className="w-full flex items-center justify-center px-4 py-2 bg-white text-[#19647E] rounded-md font-semibold shadow-lg hover:bg-gray-100 transition duration-300"
+            >
+              <img
+                src="/assets/google-icon.png" 
+                alt="Google Icon"
+                className="w-6 h-6 mr-2"
+              />
+              Login with Google
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
