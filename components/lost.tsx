@@ -46,16 +46,42 @@ const Lost: React.FC = () => {
 
         <section className="mb-10">
           <h2 className="text-3xl text-cyan-900 font-bold mb-4">Items</h2>
-          <div className="grid grid-cols-5 gap-7">
-            {[...Array(10)].map((_, index) => (
-              <div key={index} className="flex-shrink-0">
-                <Card
-                  title="Product name"
-                  location="Location"
-                  time="Time"
-                />
-              </div>
-            ))}
+          <div className="grid grid-cols-4 gap-6">
+            <Card
+              image = "/assets/wallet.jpg"
+              title="Lost Wallet"
+              location="Library"
+              time="14:40"
+              locationLabel="Lost at"
+            />
+            <Card
+              image ="/assets/earbuds.jpg"
+              title="Earbuds"
+              location="Cafeteria"
+              time="18:30"
+              locationLabel="Lost at"
+            />
+            <Card
+              image ="/assets/bottle.jpg"
+              title="Water Bottle"
+              location="Gym"
+              time="6:30"
+              locationLabel="Lost at"
+            />
+            <Card
+              image ="/assets/umbrella.jpg"
+              title="Umbrella"
+              location="Park"
+              time="17:30"
+              locationLabel="Lost at"
+            />
+            <Card
+              image ="/assets/glasses.jpg"
+              title="Glasses"
+              location="Cafe"
+              time="16:30"
+              locationLabel="Lost at"
+            />
           </div>
         </section>
 

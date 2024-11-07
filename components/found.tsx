@@ -46,31 +46,41 @@ const Found: React.FC = () => {
 
         <section className="mb-10">
           <h2 className="text-3xl text-cyan-900 font-bold mb-4">Items</h2>
-          <div className="grid grid-cols-3 gap-7">
+          <div className="grid grid-cols-4 gap-6">
             <Card
+              image = "/assets/wallet.jpg"
               title="Lost Wallet"
               location="Library"
               time="14:40"
+              locationLabel="Found at"
             />
             <Card
-              title="Umbrella"
+              image ="/assets/earbuds.jpg"
+              title="Earbuds"
               location="Cafeteria"
               time="18:30"
+              locationLabel="Found at"
             />
             <Card
+              image ="/assets/bottle.jpg"
               title="Water Bottle"
               location="Gym"
               time="6:30"
+              locationLabel="Found at"
             />
             <Card
-              title="Purse"
+              image ="/assets/umbrella.jpg"
+              title="Umbrella"
               location="Park"
               time="17:30"
+              locationLabel="Found at"
             />
             <Card
-              title="Sunglasses"
+              image ="/assets/glasses.jpg"
+              title="Glasses"
               location="Cafe"
               time="16:30"
+              locationLabel="Found at"
             />
           </div>
         </section>
