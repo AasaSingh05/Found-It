@@ -121,25 +121,6 @@ const LandingPage: React.FC = () => {
               </button>
             </form>
 
-            
-            <div className="flex items-center justify-center my-6">
-              <div className="w-1/4 h-px bg-gray-300"></div>
-              <p className="px-2 text-sm text-gray-200">OR</p>
-              <div className="w-1/4 h-px bg-gray-300"></div>
-            </div>
-
-            {/* Google Login */}
-            <button
-              onClick={handleGoogleLogin}
-              className="w-full flex items-center justify-center px-4 py-2 bg-white text-[#19647E] rounded-md font-semibold shadow-lg hover:bg-gray-100 transition duration-300"
-            >
-              <img
-                src="/assets/googoo.jpg" 
-                alt="Google Icon"
-                className="w-6 h-6 mr-2"
-              />
-              Login with Google
-            </button>
           </div>
         </div>
       )}

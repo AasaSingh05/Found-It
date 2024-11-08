@@ -14,7 +14,7 @@ const Profile: React.FC = () => {
     container.scrollTo({
       top: 0,
       left: container.scrollLeft + scrollAmount,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
 
@@ -26,21 +26,21 @@ const Profile: React.FC = () => {
       <Sidebar />
       
       <img
-      src="/assets/paperplane.png" 
-      className="absolute top-[70px] right-[50px] w-150 h-40" // Positioning at the top-right corner
-    />
+        src="/assets/paperplane.png"
+        className="absolute top-[70px] right-[50px] w-150 h-40" // Positioning at the top-right corner
+        alt="Decorative Plane"
+      />
+      
       <div className="flex-grow p-8 overflow-x-hidden">
-        
         {/* User Information Section */}
         <div className="bg-[#19647E] p-4 mb-6 rounded-lg shadow-md flex items-center" style={{ height: '300px' }}>
-          {/* Profile Image - Smaller size */}
-          <div className="h-4/5 aspect-square">  {/* Changed from h-full to h-4/5 */}
+          {/* Profile Image */}
+          <div className="h-4/5 aspect-square">
             <img 
               src="assets/profile.jpg"
-              alt="User Avatar" 
+              alt="User Avatar"
               className="h-full w-full rounded-full border-4 border-white object-cover"
             />
-            
           </div>
           
           {/* User Info */}
@@ -55,43 +55,79 @@ const Profile: React.FC = () => {
           </div>
         </div>
 
-        {/* Recently Found Section */}
+        {/* Uploads Section */}
         <section className="mb-10">
           <h2 className="text-2xl text-cyan-900 font-bold mb-4">Uploads</h2>
           <div
             className="flex space-x-6 overflow-x-auto px-2 py-4 scroll-smooth"
             onWheel={handleScroll}
           >
-            {[...Array(5)].map((_, index) => (
-              <div key={index} className="w-72 flex-shrink-0">
-                <Card
-                  image = 'public\assets\sample.png'
-                  title="Product name"
-                  location="Location"
-                  time="Time"
-                />
-              </div>
-            ))}
+            <Card
+              image="/assets/earbuds.jpg"
+              title="Earbuds"
+              location="Cafeteria"
+              time="18:30"
+              locationLabel="Found at"
+            />
+            <Card
+              image="/assets/wallet.jpg"
+              title="Wallet"
+              location="Library"
+              time="12:00"
+              locationLabel="Found at"
+            />
+            <Card
+              image="/assets/umbrella.jpg"
+              title="Umbrella"
+              location="Gym"
+              time="15:45"
+              locationLabel="Found at"
+            />
+            <Card
+              image ="/assets/glasses.jpg"
+              title="Glasses"
+              location="Cafe"
+              time="16:30"
+              locationLabel="Found at"
+            />
           </div>
         </section>
 
         {/* Recently Viewed Section */}
-        <section>
+        <section className="mb-10">
           <h2 className="text-2xl text-cyan-900 font-bold mb-4">Recently viewed</h2>
           <div
             className="flex space-x-6 overflow-x-auto px-2 py-4 scroll-smooth"
             onWheel={handleScroll}
           >
-            {[...Array(5)].map((_, index) => (
-              <div key={index} className="w-72 flex-shrink-0">
-                <Card
-                    image = 'public\assets\sample.png'
-                  title="Product name"
-                  location="Lost by: Person"
-                  time="Time"
-                />
-              </div>
-            ))}
+            <Card
+              image="/assets/earbuds.jpg"
+              title="Earbuds"
+              location="Cafeteria"
+              time="18:30"
+              locationLabel="Found at"
+            />
+            <Card
+              image="/assets/wallet.jpg"
+              title="Wallet"
+              location="Library"
+              time="12:00"
+              locationLabel="Found at"
+            />
+            <Card
+              image="/assets/umbrella.jpg"
+              title="Umbrella"
+              location="Gym"
+              time="15:45"
+              locationLabel="Found at"
+            />
+            <Card
+              image ="/assets/glasses.jpg"
+              title="Glasses"
+              location="Cafe"
+              time="16:30"
+              locationLabel="Found at"
+            />
           </div>
         </section>
       </div>
