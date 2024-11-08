@@ -18,9 +18,6 @@ const Profile: React.FC = () => {
     });
   };
 
-  const [name, setname] = useState<string>(SessionUsername);
-  const [email, setemail] = useState<string>(CurrEmail);
-
   return (
     <div className="min-h-screen flex">
       <Sidebar />
