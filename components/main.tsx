@@ -90,15 +90,15 @@ const Main: React.FC = () => {
               locationLabel="Lost at"
             />
             <Card
-              image="/assets/keys.jpg"
+              image="/assets/key.jpg"
               title="Keys"
               location="Hostel Gate"
               time="13:40"
               locationLabel="Lost at"
             />
             <Card
-              image="/assets/backpack.jpg"
-              title="Backpack"
+              image="/assets/bag.jpg"
+              title="Bag"
               location="Library"
               time="09:20"
               locationLabel="Lost at"

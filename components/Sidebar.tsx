@@ -79,7 +79,7 @@ const Sidebar: React.FC = () => {
               </li>
              <li>
                 <a
-                  href="/logout"
+                  href="/landing"
                   onClick={handleLogout}
                   className="block py-2 px-4 text-red-600 hover:bg-gray-700 rounded transition-colors"
                 >
