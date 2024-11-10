@@ -31,7 +31,7 @@ const AddItemForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                 <input
                     type="text"
                     className="p-2 border border-gray-400 rounded-md w-1/3 ml-7 selection: text-lg focus:outline-none"
-                    placeholder="Date"
+                    placeholder="Name"
                 />
                 <input
                     type="text"
@@ -44,7 +44,7 @@ const AddItemForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                     id="description"
                     style={{ width: '84%' }}
                     className="flex justify-center translate-x-7 px-2 py-2 pt-1 h-full text-lg border border-gray-300 rounded-md shadow-sm focus:outline-none"
-                    placeholder="Enter a description for the item"
+                    placeholder="Enter the location and description for the item"
                 />
                 <br />
                 <h2 className='flex justify-start items-center text-gray-100 text-xl font-bold translate-x-7'>
